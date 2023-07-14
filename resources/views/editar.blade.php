@@ -13,42 +13,33 @@
         <a class="nav-link text-white " href="/">Listar</a>
         <a href="/adicionar" class="nav-link text-white" >Adicionar</a>
       </nav>
-  
-  
+     
     <div class="container pt-5"> 
-    @if(count($errors->all())>=1 )
-   <div class="alert alert-danger" role="alert">
-      @foreach($errors->all() as $error)
-        <li>{{$error}}</li> 
-      @endforeach
-  </div>
-
-   @endif
-        <h3>Cadastro Produto</h3>
-        <form method="post" action="/salvar">
+        <h3>Editar Produto: {{$produto->nome}}</h3>
+        <form method="post" action="/atualizar/{{$produto->id}}">
           @csrf
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="nome">Nome</label>
-                <input type="text" class="form-control"   name="nome" value="{{old('nome')}}" id="nome" placeholder="Nome">
+                <input type="text" class="form-control" value="{{$produto->nome}}"  name="nome" id="nome" placeholder="{{$produto->nome}}">
               </div>
               <div class="form-group col-md-6">
                 <label for="preco">Preço</label>
-                <input type="number" class="form-control" id="preco" name="valor" value="{{old('preco')}}"placeholder="Preço">
+                <input type="number" class="form-control" id="preco" value="{{$produto->valor}}" name="valor" placeholder="{{$produto->valor}}">
               </div>
             </div>
             <div class="form-group">
               <label for="descricao">Descrição</label>
-              <input type="text" class="form-control" id="descricao" name="descricao" value="{{old('descricao')}}" placeholder="Descrição">
+              <input type="text" class="form-control" id="descricao"  value="{{$produto->descricao}}" name="descricao"placeholder="{{$produto->descricao}}">
             </div>
             <div class="form-group">
               <label for="quantidade">Quantidade</label>
-              <input type="number" class="form-control" id="quantidade"name="quantidade" value="{{old('quantidade')}}"placeholder="quantidade">
+              <input type="number" class="form-control" id="quantidade"name="quantidade" value="{{$produto->quantidade}}"  placeholder="{{$produto->quantidade}}">
             </div>
         
             <div class="form-group">
               <div class="form-check">
-                <input class="form-check-input"name="disponivel"   type="checkbox" id="dis">
+                <input class="form-check-input"name="disponivel"  type="checkbox" id="dis">
                 <label class="form-check-label" for="gridCheck">
                   Produto Disponível 
                 </label>

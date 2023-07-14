@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ProdutoController::class, 'listar']);
 Route::get('/adicionar', [ProdutoController::class,'adicionar']);
+
+Route::post('/salvar',[ProdutoController::class, 'salvar']);
+Route::get('/excluir/{id}',[ProdutoController::class, 'excluir']);
+Route::get('/editar/{id}', [ProdutoController::class, 'editar']);
+Route::post('/atualizar/{id}', [ProdutoController::class, 'atualizar']);
