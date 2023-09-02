@@ -12,5 +12,5 @@ Após adicionar um produto, na tela de inicial/listagem de produtos, são mostra
 ![](/img/img-3.png)
 
 Tela de editar o produto.
-![](/img/img-4.png)
+![](/img/img4.png)
 
